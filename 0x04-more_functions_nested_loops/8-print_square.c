@@ -6,9 +6,11 @@
  */
 void print_square(int size)
 {
-for (int v = 0; v < size; v++)
+int v, h;
+
+for (v = 0; v < size; v++)
 {
-for (int h = 0; h < size; h++)
+for (h = 0; h < size; h++)
 _putchar('#');
 _putchar('\n');
 }
