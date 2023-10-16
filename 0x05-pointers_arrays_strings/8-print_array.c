@@ -1,4 +1,5 @@
 #include"main.h"
+#include<stdio.h>
 /**
  * print_array - prints half of a string
  * @a: the array
