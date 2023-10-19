@@ -11,9 +11,11 @@ int b[] = {4, 3, 0, 7, 1};
 
 char *c = s;
 
+int i;
+
 while (*s)
 {
-for (int i = 0; i < 5; i++)
+for (i = 0; i < 5; i++)
 {
 if (*s == a[i] || *s == a[i] - 32)
 *s = b[i] + '0';
