@@ -3,21 +3,26 @@
  * @s: pointer to the string
  * Return: the string
  */
-
 char *cap_string(char *s)
 {
-char arr[] = {',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
+char *c = s;
 
 int i;
 
-char *c = s;
+char a[] = " \t\n,.!?\"(){}";
 
-for (i = 0; s[i] != '\0'; i++)
+int u = 1;
+
+while (*s)
 {
-if (s[i] == arr[i])
-continue;
-else if (s[i] > 'a' && s[i] < 'z')
-s[i] = s[i] - 32;
+if (u && *s >= 'a' && *s <= 'z')
+*s -= 32;
+u = 0;
+for (i = 0; i < 12; i++)
+{
+if (*s == a[i])
+u = 1;
+}
 s++;
 }
 return (c);
