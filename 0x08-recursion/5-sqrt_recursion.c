@@ -1,19 +1,18 @@
 #include"main.h"
-
 /**
- * sqrt - evaluate from 1 to n
+ * _sqrt - evaluate from 1 to n
  * @x: n
  * @y: the number that iterates from 1 to n
  * Return: the root or -1
  */
-int sqrt(int x, int y)
+int _sqrt(int x, int y)
 {
 	if (y * y == x)
 		return (y);
 	else if (y * y > x)
 		return (-1);
 	else
-		return (sqrt(x, y + 1));
+		return (_sqrt(x, y + 1));
 }
 
 /**
@@ -24,5 +23,5 @@ int sqrt(int x, int y)
 
 int _sqrt_recursion(int n)
 {
-	return (sqrt(n, 1));
+	return (_sqrt(n, 1));
 }
