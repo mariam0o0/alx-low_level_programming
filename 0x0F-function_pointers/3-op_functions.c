@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * op_add - addition
  * @a: fist integer
