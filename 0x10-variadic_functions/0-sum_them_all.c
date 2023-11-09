@@ -18,6 +18,6 @@ int sum_them_all(const unsigned int n, ...)
 	va_start(args, n);
 	for (i = 0; i < n; i++)
 		sum = sum + va_arg(args, int);
-	printf("%d\n", sum);
+	return (sum);
 	va_end(args);
 }
