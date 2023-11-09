@@ -40,7 +40,7 @@ void print_all(const char * const format, ...)
 			break;
 	}
 	if (format[j + 1]  && (format[j] == 'c' || format[j] == 'i' ||
-				format[i] == 'f' || format[i] == 's'))
+				format[j] == 'f' || format[j] == 's'))
 		printf(", ");
 	j++;
 	}
