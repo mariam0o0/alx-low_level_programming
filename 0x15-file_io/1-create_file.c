@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include "main.h"
+#include <string.h>
 /**
  * create_file - a function that creates a file
  * @filename: the name of the file
