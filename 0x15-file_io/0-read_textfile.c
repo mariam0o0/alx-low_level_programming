@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "main.h"
+#include <fcntl.h>
 /**
  * read_textfile - reads a text file and prints it to standard output
  * @filename: the name of the file
@@ -10,7 +11,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *fp;
+	int fp;
 	char *buffer;
 	ssize_t bRead, bWritten;
 
@@ -23,29 +24,26 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	buffer = malloc(sizeof(char) * letters);
 	if (!buffer)
 	{
-		fclose(fp);
 		return (0);
 	}
-	bRead = fread(buffer, letters, fp);
+	bRead = read(fp, buffer, letters);
+	close(fp);
 	if (bRead == 0)
 	{
 		free(buffer);
-		fclose(fp);
 		return (0);
 	}
-	if (!b_read)
-		b_read = letters;
+	if (!bRead)
+		bRead = letters;
 
 	bWritten = write(fileno(stdout), buffer, bRead);
 	if (bWritten == -1 || bWritten != bRead)
 	{
 		free(buffer);
-		fclose(fp);
 		return (0);
 	}
 
 	free(buffer);
-	fclose(fp);
 
 	return (bRead);
 }
